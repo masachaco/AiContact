@@ -6,6 +6,12 @@ AI なら音源（シンセ）のプログラムを数十秒で書けます。�
 **AI Contact** は「音源を入れるための VST」です。DAW に 1 回挿しておけば、あとは
 AI（Claude のスキル）がローカルホスト API 経由で音源を **デプロイ・差し替え（ホットリロード）・削除・操作** できます。
 
+## 解説動画
+
+[![AI Contact 解説動画（YouTube）](https://img.youtube.com/vi/jve0ijMYkUU/hqdefault.jpg)](https://www.youtube.com/watch?v=jve0ijMYkUU)
+
+*クリックで YouTube の解説動画が開きます（目的・インストール方法・利用上の注意）*
+
 ![AI Contact のエディタ画面](docs/screenshot.png)
 
 *4 スロット稼働中（SuperSaw / Pluck / DrumKit がチャンネル別に発音、わざと無限ループさせた実験音源は停止されて赤表示）*
