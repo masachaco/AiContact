@@ -49,8 +49,9 @@ machine), `AICONTACT_GAS_PER_FRAME` (gas override), `AICONTACT_CLANG`, `AICONTAC
 
 `.github/workflows/build.yml`: `core-and-skill` (Linux + Windows: SDK copies identical + bridge ASCII-only, host
 build, examples, CLI E2E) and `plugin` (Windows/macOS/Linux: build with HTML UI support required — WebKitGTK via
-apt, WebView2 SDK downloaded from nuget.org — then load the VST3 in the test host, upload `AIContact-<OS>` artifacts).
-Pushing a `v*` tag runs `release`, which publishes per-OS zips and the skill zip to GitHub Releases.
+apt, WebView2 SDK downloaded from nuget.org — then load the VST3 in the test host, upload separate
+`AIContact-<OS>-Plugin` and `AIContact-<OS>-Standalone` artifacts). Pushing a `v*` tag runs `release`, which
+publishes the separate per-OS plugin/standalone zips and the skill zip to GitHub Releases.
 On Windows the multi-config generator puts binaries in `build/Release/`; Python is `python`, not `python3`.
 
 ## Rules that matter

@@ -97,8 +97,12 @@ void   aci_process(int frames)            { ... out[n] = ...; }
 
 ビルド済みのものは GitHub から入手できます。
 
-- **リリース版**: `v0.1.0` のようなタグを打つと、GitHub Releases に OS ごとの zip（`AI Contact.vst3`、Standalone、`aicontact-host`）とスキルの zip が自動で公開されます
-- **最新のビルド**: Actions の各実行ページの Artifacts（`AIContact-Windows` など）
+- **リリース版**: `v0.1.0` のようなタグを打つと、GitHub Releases に OS ごとのPlugin版とStandalone版、スキルの zip が自動で公開されます
+- **最新のビルド**: Actions の各実行ページのArtifacts。DAWで使う場合は `AIContact-Windows-Plugin`、単体アプリとヘッドレスホストが必要な場合は `AIContact-Windows-Standalone` を選びます
+
+WindowsのPlugin版にはVST3とライセンスだけを収録し、Chromeが警告しやすい `.exe` は含めていません。
+Standalone版の実行ファイルは現在コード署名されていないため、ChromeやWindows SmartScreenが
+「一般的にダウンロードされていないファイル」として警告する場合があります。
 
 > **動作確認について**: 作者の手元には Windows 環境しかないため、macOS 版・Linux 版のバイナリは動作確認していません
 > （CI でビルドと VST3 の読み込みテストを通しているだけです）。どの OS 版も無保証で、自己責任でお使いください。

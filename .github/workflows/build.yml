@@ -98,19 +98,24 @@ jobs:
           "$exe" "build/plugin/AIContact_artefacts/Release/VST3/AI Contact.vst3" 2
       - name: Collect artifacts
         run: |
-          mkdir -p dist
-          cp LICENSE THIRD_PARTY_NOTICES.md dist/
-          cp -R "build/plugin/AIContact_artefacts/Release/VST3/AI Contact.vst3" dist/
-          cp -R build/plugin/AIContact_artefacts/Release/Standalone dist/
-          [ -d build/plugin/AIContact_artefacts/Release/AU ] && cp -R "build/plugin/AIContact_artefacts/Release/AU/AI Contact.component" dist/
-          for f in build/aicontact-host build/Release/aicontact-host.exe; do [ -f "$f" ] && cp "$f" dist/; done
-          ls -R dist | head -40
+          mkdir -p dist-plugin dist-standalone
+          cp LICENSE THIRD_PARTY_NOTICES.md dist-plugin/
+          cp LICENSE THIRD_PARTY_NOTICES.md dist-standalone/
+          cp -R "build/plugin/AIContact_artefacts/Release/VST3/AI Contact.vst3" dist-plugin/
+          [ -d build/plugin/AIContact_artefacts/Release/AU ] && cp -R "build/plugin/AIContact_artefacts/Release/AU/AI Contact.component" dist-plugin/
+          cp -R build/plugin/AIContact_artefacts/Release/Standalone/. dist-standalone/
+          for f in build/aicontact-host build/Release/aicontact-host.exe; do [ -f "$f" ] && cp "$f" dist-standalone/; done
+          ls -R dist-plugin dist-standalone | head -60
       - uses: actions/upload-artifact@v4
         with:
-          name: AIContact-${{ runner.os }}
-          path: dist
+          name: AIContact-${{ runner.os }}-Plugin
+          path: dist-plugin
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AIContact-${{ runner.os }}-Standalone
+          path: dist-standalone
 
-  # Pushing a tag like v0.1.0 publishes a GitHub Release with one zip per OS plus the skill.
+  # Pushing a tag like v0.1.0 publishes separate plugin and standalone zips plus the skill.
   release:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: [core-and-skill, plugin]
