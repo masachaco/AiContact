@@ -11,7 +11,9 @@ AI（Claude のスキル）がローカルホスト API 経由で音源を **デ
 
 https://github.com/user-attachments/assets/f5acddec-09e8-44d3-af2e-b05972c60c64
 
+**ダウンロード: [最新リリース](https://github.com/masachaco/AiContact/releases/latest)**（Windows / macOS / Linux の Plugin 版・Standalone 版、Claude スキル）
 
+> テストや動作確認は入念には行っていません（macOS / Linux 版は起動も未確認）。自己責任・無保証でお使いください。
 
 ![AI Contact のエディタ画面](docs/screenshot.png)
 
@@ -104,7 +106,7 @@ void   aci_process(int frames)            { ... out[n] = ...; }
 
 ビルド済みのものは GitHub から入手できます。
 
-- **リリース版**: `v0.1.0` のようなタグを打つと、GitHub Releases に OS ごとのPlugin版とStandalone版、スキルの zip が自動で公開されます
+- **リリース版**: [Releases](https://github.com/masachaco/AiContact/releases/latest) から、OS ごとの Plugin 版・Standalone 版とスキルの zip をダウンロードできます（ログイン不要）。`v0.1.0` のようなタグを打つと自動で公開されます
 - **最新のビルド**: Actions の各実行ページのArtifacts。DAWで使う場合は `AIContact-Windows-Plugin`、単体アプリとヘッドレスホストが必要な場合は `AIContact-Windows-Standalone` を選びます
 
 ### ビルド成果物（main の最新ビルド）
