@@ -107,6 +107,18 @@ void   aci_process(int frames)            { ... out[n] = ...; }
 - **リリース版**: `v0.1.0` のようなタグを打つと、GitHub Releases に OS ごとのPlugin版とStandalone版、スキルの zip が自動で公開されます
 - **最新のビルド**: Actions の各実行ページのArtifacts。DAWで使う場合は `AIContact-Windows-Plugin`、単体アプリとヘッドレスホストが必要な場合は `AIContact-Windows-Standalone` を選びます
 
+### ビルド成果物（main の最新ビルド）
+
+| OS | DAW 用（Plugin） | 単体アプリ（Standalone ＋ `aicontact-host`） |
+|---|---|---|
+| Windows | [AIContact-Windows-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11690649104)（VST3） | [AIContact-Windows-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11690639261) |
+| macOS | [AIContact-macOS-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11692065648)（VST3 / AU） | [AIContact-macOS-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11691885808) |
+| Linux | [AIContact-Linux-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11692235310)（VST3） | [AIContact-Linux-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11691795986) |
+
+- [このビルドの実行ページ](https://github.com/masachaco/AiContact/actions/runs/38110949117)（全ジョブ成功）。Actions の成果物は、ダウンロードに **GitHub へのログインが必要**で、
+  保存期間（90 日）を過ぎると消えます。ログイン不要でずっと置いておけるのはリリース版です
+- スキルはこの中に含まれていません。リポジトリの `skill/` からインストールしてください（下記）
+
 WindowsのPlugin版にはVST3とライセンスだけを収録し、Chromeが警告しやすい `.exe` は含めていません。
 Standalone版の実行ファイルは現在コード署名されていないため、ChromeやWindows SmartScreenが
 「一般的にダウンロードされていないファイル」として警告する場合があります。
