@@ -11,9 +11,36 @@ AI（Claude のスキル）がローカルホスト API 経由で音源を **デ
 
 https://github.com/user-attachments/assets/f5acddec-09e8-44d3-af2e-b05972c60c64
 
-**ダウンロード: [最新リリース](https://github.com/masachaco/AiContact/releases/latest)**（Windows / macOS / Linux の Plugin 版・Standalone 版、Claude スキル）
+## ダウンロード（Windows / macOS / Linux）
 
-> テストや動作確認は入念には行っていません（macOS / Linux 版は起動も未確認）。自己責任・無保証でお使いください。
+ビルド済みのものは GitHub から入手できます。
+
+- **リリース版**: [Releases](https://github.com/masachaco/AiContact/releases/latest) から、OS ごとの Plugin 版・Standalone 版とスキルの zip をダウンロードできます（ログイン不要）。`v0.1.0` のようなタグを打つと自動で公開されます
+- **最新のビルド**: Actions の各実行ページのArtifacts。DAWで使う場合は `AIContact-Windows-Plugin`、単体アプリとヘッドレスホストが必要な場合は `AIContact-Windows-Standalone` を選びます
+
+### ビルド成果物（main の最新ビルド）
+
+| OS | DAW 用（Plugin） | 単体アプリ（Standalone ＋ `aicontact-host`） |
+|---|---|---|
+| Windows | [AIContact-Windows-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11690649104)（VST3） | [AIContact-Windows-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11690639261) |
+| macOS | [AIContact-macOS-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11692065648)（VST3 / AU） | [AIContact-macOS-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11691885808) |
+| Linux | [AIContact-Linux-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11692235310)（VST3） | [AIContact-Linux-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11691795986) |
+
+- [このビルドの実行ページ](https://github.com/masachaco/AiContact/actions/runs/38110949117)（全ジョブ成功）。Actions の成果物は、ダウンロードに **GitHub へのログインが必要**で、
+  保存期間（90 日）を過ぎると消えます。ログイン不要でずっと置いておけるのはリリース版です
+- スキルはこの中に含まれていません。リポジトリの `skill/` からインストールしてください（下記）
+
+WindowsのPlugin版にはVST3とライセンスだけを収録し、Chromeが警告しやすい `.exe` は含めていません。
+Standalone版の実行ファイルは現在コード署名されていないため、ChromeやWindows SmartScreenが
+「一般的にダウンロードされていないファイル」として警告する場合があります。
+
+> **動作確認について**: 作者の手元には Windows 環境しかないため、macOS 版・Linux 版のバイナリは動作確認していません
+> （CI でビルドと VST3 の読み込みテストを通しているだけです）。どの OS 版も無保証で、自己責任でお使いください。
+
+Windows でのインストール:
+1. `AI Contact.vst3` を `C:\Program Files\Common Files\VST3` にコピーし、DAW でプラグインを再スキャン
+2. スキル: リポジトリの `skill\install.ps1` を実行（`%USERPROFILE%\.claude\skills\aicontact` に入ります）
+3. C で音源を書くなら [LLVM](https://releases.llvm.org/) をインストール（clang と wasm-ld が入ります）
 
 ![AI Contact のエディタ画面](docs/screenshot.png)
 
@@ -101,37 +128,6 @@ void   aci_process(int frames)            { ... out[n] = ...; }
 | `skill/aicontact/` | Claude スキル（`SKILL.md`、CLI `scripts/aicontact.py`、書き方ガイド、API リファレンス、同梱 SDK） |
 | `examples/` | サンプル音源（Sine, SuperSaw, DrumKit, Pluck, WAT Square） |
 | `tests/` | CLI エンドツーエンドテスト、VST3 ホスティングテスト |
-
-## ダウンロード（Windows / macOS / Linux）
-
-ビルド済みのものは GitHub から入手できます。
-
-- **リリース版**: [Releases](https://github.com/masachaco/AiContact/releases/latest) から、OS ごとの Plugin 版・Standalone 版とスキルの zip をダウンロードできます（ログイン不要）。`v0.1.0` のようなタグを打つと自動で公開されます
-- **最新のビルド**: Actions の各実行ページのArtifacts。DAWで使う場合は `AIContact-Windows-Plugin`、単体アプリとヘッドレスホストが必要な場合は `AIContact-Windows-Standalone` を選びます
-
-### ビルド成果物（main の最新ビルド）
-
-| OS | DAW 用（Plugin） | 単体アプリ（Standalone ＋ `aicontact-host`） |
-|---|---|---|
-| Windows | [AIContact-Windows-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11690649104)（VST3） | [AIContact-Windows-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11690639261) |
-| macOS | [AIContact-macOS-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11692065648)（VST3 / AU） | [AIContact-macOS-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11691885808) |
-| Linux | [AIContact-Linux-Plugin](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11692235310)（VST3） | [AIContact-Linux-Standalone](https://github.com/masachaco/AiContact/actions/runs/38110949117/artifacts/11691795986) |
-
-- [このビルドの実行ページ](https://github.com/masachaco/AiContact/actions/runs/38110949117)（全ジョブ成功）。Actions の成果物は、ダウンロードに **GitHub へのログインが必要**で、
-  保存期間（90 日）を過ぎると消えます。ログイン不要でずっと置いておけるのはリリース版です
-- スキルはこの中に含まれていません。リポジトリの `skill/` からインストールしてください（下記）
-
-WindowsのPlugin版にはVST3とライセンスだけを収録し、Chromeが警告しやすい `.exe` は含めていません。
-Standalone版の実行ファイルは現在コード署名されていないため、ChromeやWindows SmartScreenが
-「一般的にダウンロードされていないファイル」として警告する場合があります。
-
-> **動作確認について**: 作者の手元には Windows 環境しかないため、macOS 版・Linux 版のバイナリは動作確認していません
-> （CI でビルドと VST3 の読み込みテストを通しているだけです）。どの OS 版も無保証で、自己責任でお使いください。
-
-Windows でのインストール:
-1. `AI Contact.vst3` を `C:\Program Files\Common Files\VST3` にコピーし、DAW でプラグインを再スキャン
-2. スキル: リポジトリの `skill\install.ps1` を実行（`%USERPROFILE%\.claude\skills\aicontact` に入ります）
-3. C で音源を書くなら [LLVM](https://releases.llvm.org/) をインストール（clang と wasm-ld が入ります）
 
 ## ビルド
 
