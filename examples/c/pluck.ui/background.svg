@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="220" viewBox="0 0 520 220">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a3420"/>
+      <stop offset="0.5" stop-color="#7a4a2c"/>
+      <stop offset="1" stop-color="#4a2a18"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b3e44"/>
+      <stop offset="1" stop-color="#202226"/>
+    </linearGradient>
+    <linearGradient id="well" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#151619"/>
+      <stop offset="1" stop-color="#1d1f23"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="220" fill="url(#metal)"/>
+  <rect x="0" y="0" width="22" height="220" fill="url(#wood)"/>
+  <rect x="498" y="0" width="22" height="220" fill="url(#wood)"/>
+  <rect x="22" y="0" width="476" height="1" fill="#5c6068"/>
+  <rect x="36" y="56" width="300" height="150" rx="8" fill="url(#well)" stroke="#0c0d0f"/>
+  <rect x="350" y="56" width="134" height="150" rx="8" fill="url(#well)" stroke="#0c0d0f"/>
+  <circle cx="30" cy="12" r="2.5" fill="#8a8f98"/>
+  <circle cx="490" cy="12" r="2.5" fill="#8a8f98"/>
+  <circle cx="30" cy="208" r="2.5" fill="#8a8f98"/>
+  <circle cx="490" cy="208" r="2.5" fill="#8a8f98"/>
+</svg>

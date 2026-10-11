@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="aci-size" content="720x300">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="panel">
+    <header>
+      <div class="logo">SUPER<span>SAW</span></div>
+      <div class="sub">7-voice detuned oscillator</div>
+      <div class="screen"><span id="readout-name">CUTOFF</span><b id="readout-value">2.50 kHz</b></div>
+    </header>
+    <section class="row">
+      <div class="group">
+        <h2>Oscillator</h2>
+        <div class="knobs"><div class="knob" data-param="Detune"></div></div>
+      </div>
+      <div class="group wide">
+        <h2>Filter</h2>
+        <div class="knobs">
+          <div class="knob big" data-param="Cutoff"></div>
+          <div class="knob" data-param="Resonance"></div>
+          <div class="knob" data-param="Env Amount" data-label="Env"></div>
+        </div>
+      </div>
+      <div class="group">
+        <h2>Envelope</h2>
+        <div class="knobs">
+          <div class="knob" data-param="Attack"></div>
+          <div class="knob" data-param="Release"></div>
+        </div>
+      </div>
+      <div class="group">
+        <h2>Output</h2>
+        <div class="knobs"><div class="knob" data-param="Volume"></div></div>
+      </div>
+    </section>
+    <div class="keys" id="keys"></div>
+  </div>
+  <script src="knob.js"></script>
+</body>
+</html>

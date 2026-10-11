@@ -1,0 +1,23 @@
+{
+  "size": [520, 220],
+  "background": "background.svg",
+  "color": "#e8dcc4",
+  "accent": "#ffaa3c",
+  "elements": [
+    { "type": "label", "text": "PLUCK", "x": 36, "y": 12, "w": 140, "h": 32, "size": 26, "bold": true, "align": "left" },
+    { "type": "label", "text": "Karplus-Strong string", "x": 160, "y": 20, "w": 200, "h": 20, "size": 12,
+      "color": "#9c9384", "align": "left" },
+
+    { "type": "knob", "param": "Damping", "src": "damping.png", "frames": 48, "x": 66, "y": 70, "w": 90, "h": 90 },
+    { "type": "label", "text": "DAMPING", "x": 56, "y": 160, "w": 110, "h": 16, "size": 11, "bold": true },
+    { "type": "value", "param": "Damping", "x": 56, "y": 178, "w": 110, "h": 16, "size": 11, "color": "#ffaa3c" },
+
+    { "type": "knob", "param": "Brightness", "src": "knob.svg", "x": 216, "y": 74, "w": 82, "h": 82 },
+    { "type": "label", "text": "BRIGHTNESS", "x": 202, "y": 160, "w": 110, "h": 16, "size": 11, "bold": true },
+    { "type": "value", "param": "Brightness", "x": 202, "y": 178, "w": 110, "h": 16, "size": 11, "color": "#ffaa3c" },
+
+    { "type": "slider", "param": "Width", "src": "thumb.svg", "x": 397, "y": 66, "w": 40, "h": 96 },
+    { "type": "label", "text": "WIDTH", "x": 362, "y": 160, "w": 110, "h": 16, "size": 11, "bold": true },
+    { "type": "value", "param": "Width", "x": 362, "y": 178, "w": 110, "h": 16, "size": 11, "color": "#ffaa3c" }
+  ]
+}
