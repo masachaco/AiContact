@@ -8,9 +8,10 @@ AI（Claude のスキル）がローカルホスト API 経由で音源を **デ
 
 ## 解説動画
 
-[![AI Contact 解説動画（YouTube）](https://img.youtube.com/vi/jve0ijMYkUU/hqdefault.jpg)](https://www.youtube.com/watch?v=jve0ijMYkUU)
 
-*クリックで YouTube の解説動画が開きます（目的・インストール方法・利用上の注意）*
+https://github.com/user-attachments/assets/f5acddec-09e8-44d3-af2e-b05972c60c64
+
+
 
 ![AI Contact のエディタ画面](docs/screenshot.png)
 
